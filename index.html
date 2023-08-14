@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,74 @@
     <script src="./reddit-service.js"></script>
     <script src="./header.js"></script>
     <script src="./list.js"></script>
+    <script src="./dialog-service.js"></script>
+    <script src="./app.js"></script>
 </head>
+
 <body>
-    <reddit-header></reddit-header>
+    <div class="main-wrapper">
+
+        <dialog open>
+
+            <div class="subreddit-list">
+                <p>Scegli quali subreddit visualizzare: </p>
+
+                <label>
+                    <input type="checkbox" name="subreddit" value="aww"><a href="https://www.reddit.com/r/aww/"
+                        target="_blank">r/aww</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="italy"><a href="https://www.reddit.com/r/italy/"
+                        target="_blank">r/italy</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="pokemon"><a href="https://www.reddit.com/r/pokemon/"
+                        target="_blank">r/pokemon</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="photography"><a
+                        href="https://www.reddit.com/r/photography/" target="_blank">r/photography</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="food"><a href="https://www.reddit.com/r/food/"
+                        target="_blank">r/food</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="technology"><a
+                        href="https://www.reddit.com/r/technology/" target="_blank">r/technology</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="travel"><a href="https://www.reddit.com/r/travel/"
+                        target="_blank">r/travel</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="gaming"><a href="https://www.reddit.com/r/gaming/"
+                        target="_blank">r/gaming</a>
+                </label>
+                <label>
+                    <input type="checkbox" name="subreddit" value="news"><a href="https://www.reddit.com/r/news/"
+                        target="_blank">r/news</a>
+                </label>
+                <form method="dialog">
+                    <button id="submit-button">Conferma</button>
+                </form>
+            </div>
+        </dialog>
+    </div>
+    <div class="reddit-header-div">
+         <reddit-header>
+
+         </reddit-header>
+         <div class="header-bottom">
+            Aggiungi subreddit <button id="dialog-btn">Apri la lista</button>
+         </div>
+    </div>
+   
     <reddit-list></reddit-list>
+    <div class="header-nav">
+
+    </div>
 </body>
+
 </html>
+
