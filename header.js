@@ -8,7 +8,8 @@ class RedditHeader extends HTMLElement{
     }
 
     addSubreddits(subreddits){
-        this.subscriptions = this.subscriptions.concat(subreddits);
+        const uniqueSubreddits = subreddits.filter(subreddit => !this.subscriptions.includes(subreddit));
+        this.subscriptions = this.subscriptions.concat(uniqueSubreddits);
         this.renderLinks();
     }
 

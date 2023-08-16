@@ -1,6 +1,12 @@
-// app.js
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    const dialogButton = document.getElementById('dialog-btn');
+    dialogButton.addEventListener('click', () => {
+        const dialog = document.querySelector('dialog');
+        dialog.showModal();
+    });
+
+
     const submitButton = document.getElementById('submit-button');
     submitButton.addEventListener('click', () => {
         const selectedSubreddits = Array.from(document.querySelectorAll('input[name="subreddit"]:checked'))
