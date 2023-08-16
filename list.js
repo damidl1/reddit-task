@@ -43,3 +43,4 @@ class RedditList extends HTMLElement{
 }
 
 customElements.define('reddit-list', RedditList)
+

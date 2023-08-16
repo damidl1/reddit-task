@@ -7,6 +7,20 @@ class RedditHeader extends HTMLElement{
         this.subscriptions = ['aww', 'italy', 'pokemon']
     }
 
+    addSubreddits(subreddits){
+        this.subscriptions = this.subscriptions.concat(subreddits);
+        this.renderLinks();
+    }
+
+    renderLinks() {
+        const links = this.subscriptions
+        .map(s => `<a href="./?r=${s}">${s}</a>`);
+        const linksString = links.join('');
+
+        const nav = this.shadowRoot.querySelector('nav');
+        nav.innerHTML = linksString;
+    }
+
     connectedCallback(){
 
         this.shadowRoot.innerHTML = `<style>
@@ -32,3 +46,4 @@ class RedditHeader extends HTMLElement{
 }
 
 customElements.define('reddit-header', RedditHeader)
+
