@@ -4,12 +4,15 @@ class RedditHeader extends HTMLElement{
         super()
         this.attachShadow({mode: 'open'})
         //da recuperare dal local storage (se non ho niente salvato, apro la dialog)
-        this.subscriptions = ['aww', 'italy', 'pokemon']
+        this.subscriptions =JSON.parse(localStorage.getItem('subreddits')) || ['aww', 'italy', 'pokemon'];
     }
 
     addSubreddits(subreddits){
         const uniqueSubreddits = subreddits.filter(subreddit => !this.subscriptions.includes(subreddit));
         this.subscriptions = this.subscriptions.concat(uniqueSubreddits);
+        
+        localStorage.setItem('subreddits', JSON.stringify(this.subscriptions));
+
         this.renderLinks();
     }
 
