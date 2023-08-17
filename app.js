@@ -1,8 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    function saveCheckboxState(checkbox) {
+        const subreddit = checkbox.value;
+        localStorage.setItem(`subreddit_${subreddit}`, checkbox.checked ? 'true' : 'false');
+    }
+
+    function restoreCheckboxState(checkbox) {
+        const subreddit = checkbox.value;
+        const isChecked = localStorage.getItem(`subreddit_${subreddit}`) === 'true';
+        checkbox.checked = isChecked;
+    }
+
     const dialogButton = document.getElementById('dialog-btn'); 
     const dialog = document.querySelector('dialog');
     const cancelButton = document.getElementById('cancel-button');
+
+    const checkboxes = document.querySelectorAll('input[name="subreddit"]');
+    checkboxes.forEach(restoreCheckboxState);
 
     if (localStorage.getItem('showDialog') === 'true' && localStorage.getItem('subreddits') === null) {
         dialog.showModal();
@@ -29,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const selectedSubreddits = Array.from(document.querySelectorAll('input[name="subreddit"]:checked'))
             .map(checkbox => checkbox.value);
+
+            selectedSubreddits.forEach(saveCheckboxState);
 
         if (selectedSubreddits.length > 0) {
             const redditHeader = document.querySelector('reddit-header');
