@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         checkbox.checked = isChecked;
     }
 
+
+    const removeSubredditButton = document.getElementById('removesubreddit-btn');
+    removeSubredditButton.addEventListener('click', () => {
+        const redditHeader = document.querySelector('reddit-header');
+        redditHeader.showRemoveMode();
+        removeSubredditButton.classList.add('hide-remove-buttons');
+        finishRemovingButton.classList.remove('hide-remove-buttons');
+    });
+
     const dialogButton = document.getElementById('dialog-btn'); 
     const dialog = document.querySelector('dialog');
     const cancelButton = document.getElementById('cancel-button');
@@ -35,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
             dialog.showModal();
         }
     });
+
+    const finishRemovingButton = document.getElementById('finish-removing-btn');
+    finishRemovingButton.addEventListener('click', () => {
+        const redditHeader = document.querySelector('reddit-header');
+        redditHeader.showRemoveMode();
+        removeSubredditButton.classList.remove('hide-remove-buttons');
+        finishRemovingButton.classList.add('hide-remove-buttons');
+
+    })
 
 
     const submitButton = document.getElementById('submit-button');
