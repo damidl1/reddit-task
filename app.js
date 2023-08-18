@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const finishRemovingButton = document.getElementById('finish-removing-btn');
     finishRemovingButton.addEventListener('click', () => {
         const redditHeader = document.querySelector('reddit-header');
-        redditHeader.showRemoveMode();
+        redditHeader.removeAttribute('remove-mode');
         removeSubredditButton.classList.remove('hide-remove-buttons');
         finishRemovingButton.classList.add('hide-remove-buttons');
 
