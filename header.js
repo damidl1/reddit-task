@@ -57,14 +57,53 @@ class RedditHeader extends HTMLElement{
 
     connectedCallback(){
       this.shadowRoot.innerHTML = `<style>
-            nav{
-                display:flex;
-                gap: 8px;
-            }
+      :host {
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        gap: 8px;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: crimson;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .header-image {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
         </style>`;
 
       this.shadowRoot.innerHTML += `
-            <h1>Reddit viewer</h1>        
+  <div class="header-container">
+      <img class="header-image" src="./assets/redditlogo.png" alt="Reddit Logo">
+      <h1>Reddit viewer</h1>
+  </div>      
         `;
       const links = this.subscriptions.map(
         (s) => `<a href="./?r=${s}">${s}</a>`

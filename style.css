@@ -4,8 +4,10 @@
     padding: 0px;
 }
 
+
+
 body{
-    background-color: #467599;
+    background-color: #0b1416;
     margin: 0;
 }
 
@@ -30,4 +32,122 @@ footer{
     justify-content: center;
     margin: 0px;
     
+}
+
+
+.header-bottom{
+    color: crimson;
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 20px 30px;
+    padding-left: 30px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+#removesubreddit-btn,
+#dialog-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    width: 180px;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+}
+
+dialog {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subreddit-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subreddit-list p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.subreddit-list label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.subreddit-list input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.subreddit-list a {
+    color:  #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.subreddit-list a:hover {
+    text-decoration: underline; 
+}
+
+
+.dialog-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.dialog-buttons button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dialog-buttons #submit-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.dialog-buttons #cancel-button {
+    background-color: #ccc;
+    color: black;
+}
+
+#dialog-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+}
+
+reddit-header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+reddit-header nav a:hover{
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 50px;
 }
