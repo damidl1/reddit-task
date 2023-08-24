@@ -20,6 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
         finishRemovingButton.classList.remove('hide-remove-buttons');
     });
 
+    const addSubredditButton = document.getElementById('add-subreddit-button');
+    addSubredditButton.addEventListener('click', () => {
+        const newSubredditInput = document.getElementById('new-subreddit-input');
+        const newSubreddit = newSubredditInput.value.trim();
+
+        if (newSubreddit !== '') {
+            const subredditList = document.querySelector('.subreddit-list');
+            const label = document.createElement('label');
+            label.innerHTML = `
+            <input type="checkbox" name="subreddit" value="${newSubreddit}">
+            <a href="https://www.reddit.com/r/${newSubreddit}" target="_blank">${newSubreddit}</a>
+            `;
+            subredditList.insertBefore(label, subredditList.firstChild);
+            const savedSubreddits = JSON.parse(localStorage.getItem('subreddits')) || [];
+            savedSubreddits.push(newSubreddit);
+            localStorage.setItem('subreddits', JSON.stringify(savedSubreddits));
+            
+            newSubredditInput.value = '';
+        }
+    });
+
+    // const savedSubreddits = JSON.parse(localStorage.getItem('subreddits')) || [];
+    // savedSubreddits.forEach(subreddit => {
+    //     const subredditList = document.querySelector('.subreddit-list');
+    //     const label = document.createElement('label');
+    //     label.innerHTML = `
+    //     <input type="checkbox" name="subreddit" value="${newSubreddit}">
+    //     <a href="https://www.reddit.com/r/${newSubreddit}" target="_blank">${newSubreddit}</a>
+    //     `
+    //     subredditList.insertBefore(label, subredditList.firstChild);
+    // })
+
     const dialogButton = document.getElementById('dialog-btn'); 
     const dialog = document.querySelector('dialog');
     const cancelButton = document.getElementById('cancel-button');
@@ -55,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
+
     const submitButton = document.getElementById('submit-button');
     submitButton.addEventListener('click', () => {
         localStorage.setItem('showDialog', 'false');
@@ -69,5 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
             redditHeader.addSubreddits(selectedSubreddits);
         }
     });
+
+    const subredditList = document.querySelector('.subreddit-list');
+   checkboxes.forEach(restoreCheckboxState);
+    const savedSubreddits = JSON.parse(localStorage.getItem('subreddits')) || [];
+    savedSubreddits.forEach(subreddit => {
+        
+        const label = document.createElement('label');
+        label.innerHTML = `
+        <input type="checkbox" name="subreddit" value="${newSubreddit}">
+        <a href="https://www.reddit.com/r/${newSubreddit}" target="_blank">${newSubreddit}</a>
+        `
+        subredditList.insertBefore(label, subredditList.firstChild);
+    })
 });
 

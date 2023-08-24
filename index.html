@@ -63,6 +63,8 @@
                         target="_blank">r/nature</a>
                 </label>
                 <form method="dialog">
+                    <input type="text" id="new-subreddit-input" placeholder="Inserisci il nome del subreddit">
+                    <button id="add-subreddit-button">Aggiungi subreddit</button>
                     <button id="submit-button">Conferma</button>
                     <button id="cancel-button" type="button">Annulla</button>
                 </form>
@@ -74,7 +76,7 @@
 
          </reddit-header>
          <div class="header-bottom">
-            Aggiungi subreddit <button id="dialog-btn" data-open-dialog ="true">Apri la lista</button>
+           <button id="dialog-btn" data-open-dialog ="true">Aggiungi subreddit</button>
             <button id="removesubreddit-btn">Rimuovi subreddit</button>
             <button id="finish-removing-btn" class="hide-remove-buttons">Fine</button>
          </div>

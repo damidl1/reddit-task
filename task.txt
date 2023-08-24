@@ -1,0 +1,39 @@
+//creare una pagina web che permetta di visualizzare 
+//gli ultimi 25 post del subreddit /aww ('https://www.reddit.com/r/aww/new.json')
+//usare i web component
+
+//1- permettere all'utente di cambiare il tema
+
+
+
+task per le vacanze
+
+reddit viewer:
+
+1- all'avvio ( se non ho mai visitato il sito) presenterà la dialog di selezione dei subreddit
+dove potrò scegliere tra una decina di subreddit (obbligatorio almeno uno)
+
+2- la pagina principale mostrerà una toolbar con un bottone per ogni subreddit selezionato
+che permetterà di scegliere quali post vedere.
+
+3- tasto + che permette di riaprire la dialog e aggiungere/cambiare i subreddit
+
+4- farlo bello !
+
+
+funzionalità aggiuntive:
+
+1- aggiungere alla dialog la possibilità di aggiungere subreddit non previsti nella lista tramite 
+un input di tipo testo
+
+2- aggiungere la possibilità di cambiare tra (new, hot, top)
+
+
+
+super task
+
+1- gestire la paginazione (quanti elementi vedere)
+
+2- trasformare la app in un gestore di rss (aggregatore di news) https://feedly.com/ (cercare come parsare in js un file rss)
+
+

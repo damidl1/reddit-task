@@ -144,10 +144,3 @@ reddit-header nav a:hover{
     text-decoration: underline;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 50px;
-}
